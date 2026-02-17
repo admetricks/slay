@@ -21,7 +21,7 @@ jobs:
     - name: Generate static site
       run: bundle exec middleman build --clean --verbose
     - name: Save artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: build
         path: ./build/
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Retrieve built project
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: build
       - name: Deploy
